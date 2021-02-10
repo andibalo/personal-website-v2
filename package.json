@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@ant-design/icons": "^4.4.0",
+    "@react-icons/all-files": "^4.1.0",
     "animejs": "^3.2.1",
     "autoprefixer": "^10.2.3",
     "babel-plugin-styled-components": "^1.12.0",

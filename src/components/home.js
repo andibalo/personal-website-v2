@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
-import {
-  TransitionGroup,
-  CSSTransition,
-  Transition,
-} from "react-transition-group"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 const Home = props => {
   const [isMounted, setIsMounted] = useState(false)

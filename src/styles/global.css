@@ -49,11 +49,3 @@
   opacity: 0;
   transition: opacity 300ms var(--easing);
 }
-
-.inner.flipped .front {
-  transform: rotateY(180deg) !important;
-}
-
-.inner.flipped .back {
-  transform: rotateY(0deg) !important;
-}

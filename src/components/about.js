@@ -3,40 +3,63 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "./atoms/Button"
-import anime from "animejs"
+import Section from "./atoms/Section"
+import SectionHeader from "./atoms/SectionHeader"
 
 const About = props => {
-  const StyledBlueCircle = styled.div`
-    background-color: var(--primary-blue);
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-  `
-  const StyledGrayLine = styled.div`
-    background-color: var(--grey);
-    height: 3px;
-    width: 400px;
-  `
-
-  const StyledSection = styled.div`
-    padding-top: 75px;
-    padding-bottom: 75px;
-  `
-
   const StyledProfileCard = styled.div`
-    height: 300px;
     width: 300px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: auto;
+    height: 400px;
+
     perspective: 1000px;
+    margin: auto;
+    cursor: pointer;
+  `
+
+  const StyledFrontCard = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  `
+
+  const StyledBackCard = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-color: var(--primary-blue);
+  `
+
+  const StyledInnerCard = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.6s;
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  `
+
+  const StyledTabItem = styled.div`
+    background: var(--primary-blue);
+    padding: 8px 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
   `
 
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "andi.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 450) {
+          fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -44,21 +67,9 @@ const About = props => {
     }
   `)
 
-  const [isFlipped, setIsFlipped] = useState(false)
-
-  const flipCard = () => {
-    setIsFlipped(!isFlipped)
-  }
-
   return (
-    <StyledSection className="container">
-      <div className="sectionHeader flex items-center">
-        <StyledBlueCircle />
-        <h3 className="mb-0 ml-3 text-white text-2xl font-normal ">
-          About Me {JSON.stringify(isFlipped)}
-        </h3>
-        <StyledGrayLine className="ml-3" />
-      </div>
+    <Section className="container">
+      <SectionHeader title="About Me" />
       <div className="sectionContent flex mt-10">
         <div className="description flex-1">
           <p className="text-white">
@@ -78,55 +89,28 @@ const About = props => {
         </div>
         <div className="flex-1">
           <StyledProfileCard>
-            <div
-              className={"inner" + (isFlipped ? " flipped" : "")}
-              style={{
-                position: "relative",
-                transformStyle: "preserve-3d",
-              }}
-              onMouseEnter={flipCard}
-              onMouseLeave={flipCard}
-            >
-              <div
-                class="front"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  height: "300px",
-                  width: "300px",
-                  backfaceVisibility: "hidden",
-                  transform: "rotateY(0)",
-                  zIndex: 2,
-                  transformStyle: "preserve-3d",
-                  transition: "all 0.5s",
-                }}
-              >
-                <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-              </div>
-
-              <div
-                class="back"
-                style={{
-                  transform: "rotateY(-180deg)",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  height: "300px",
-                  width: "300px",
-                  backfaceVisibility: "hidden",
-                  background: "yellow",
-                  transformStyle: "preserve-3d",
-                  transition: "all 0.5s",
-                }}
-              >
+            <StyledInnerCard className="shadow-xl">
+              <StyledFrontCard>
+                <Img
+                  fluid={data.placeholderImage.childImageSharp.fluid}
+                  style={{ maxHeight: "400px", borderRadius: "10px" }}
+                />
+              </StyledFrontCard>
+              <StyledBackCard>
                 <p style={{ color: "red" }}>test</p>
-              </div>
-            </div>
+              </StyledBackCard>
+            </StyledInnerCard>
           </StyledProfileCard>
         </div>
       </div>
-    </StyledSection>
+      <div className="skillsContainer mt-10">
+        <div className="skillsTab flex justify-center">
+          <StyledTabItem className="skillsTabItem mr-5">Frontend</StyledTabItem>
+          <StyledTabItem className="skillsTabItem mr-5">Backend</StyledTabItem>
+          <StyledTabItem className="skillsTabItem">Others</StyledTabItem>
+        </div>
+      </div>
+    </Section>
   )
 }
 
