@@ -6,16 +6,19 @@ import sr from "../utils/scroll-reveal/sr"
 import srConfig from "../utils/scroll-reveal/sr-config"
 import ExperienceData from "../content/experience.json"
 import { CSSTransition } from "react-transition-group"
+import { MdKeyboardArrowRight } from "@react-icons/all-files/md/MdKeyboardArrowRight"
 
 const StyledTimelineCircle = styled.div`
   width: 50px;
   height: 50px;
-  background: var(--primary-blue);
+  background-color: ${({ isActive }) =>
+    isActive ? "var(--primary-blue)" : "var(--grey)"};
   border-radius: 50%;
   position: relative;
   z-index: 1;
   margin-bottom: 50px;
   cursor: pointer;
+  transition: background-color 250ms;
   &:last-child {
     margin-bottom: 0;
   }
@@ -51,6 +54,22 @@ const StyledTabContent = styled.div`
   .workPeriod {
     color: var(--grey);
   }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    position: relative;
+  }
+
+  .list-icon {
+    left: 0;
+    position: absolute;
+    margin-left: -1.8rem;
+
+    color: var(--primary-blue);
+  }
 `
 
 const Experience = () => {
@@ -66,10 +85,18 @@ const Experience = () => {
         <div className="flex mt-10 justify-center ">
           <StyledTimelineNav>
             <StyledTimelineLine />
-            <StyledTimelineCircle onClick={() => setActiveTabId(0)} />
-            <StyledTimelineCircle onClick={() => setActiveTabId(1)} />
-            <StyledTimelineCircle />
-            <StyledTimelineCircle />
+            <StyledTimelineCircle
+              isActive={0 === activeTabId}
+              onClick={() => setActiveTabId(0)}
+            />
+            <StyledTimelineCircle
+              isActive={1 === activeTabId}
+              onClick={() => setActiveTabId(1)}
+            />
+            <StyledTimelineCircle
+              isActive={2 === activeTabId}
+              onClick={() => setActiveTabId(2)}
+            />
           </StyledTimelineNav>
           <StyledTabContent>
             <div>
@@ -90,7 +117,10 @@ const Experience = () => {
                     </h5>
                     <ul>
                       {exp.jobDescription.map(desc => (
-                        <li>{desc}</li>
+                        <li>
+                          <MdKeyboardArrowRight className="list-icon text-2xl" />
+                          {desc}
+                        </li>
                       ))}
                     </ul>
                   </div>

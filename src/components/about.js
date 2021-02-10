@@ -11,6 +11,7 @@ import srConfig from "../utils/scroll-reveal/sr-config"
 import { FaBirthdayCake } from "@react-icons/all-files/fa/FaBirthdayCake"
 import { FaInfoCircle } from "@react-icons/all-files/fa/FaInfoCircle"
 import { FaGraduationCap } from "@react-icons/all-files/fa/FaGraduationCap"
+import { FaGamepad } from "@react-icons/all-files/fa/FaGamepad"
 import { SiReact } from "@react-icons/all-files/si/SiReact"
 import { SiHtml5 } from "@react-icons/all-files/si/SiHtml5"
 import { SiCss3 } from "@react-icons/all-files/si/SiCss3"
@@ -52,6 +53,19 @@ const StyledBackCard = styled.div`
   backface-visibility: hidden;
   transform: rotateY(180deg);
   background-color: var(--primary-blue);
+
+  ul {
+    position: relative;
+    color: white;
+    margin-bottom: 0;
+  }
+
+  .list-icon {
+    position: absolute;
+    margin-left: -1.5rem;
+    color: white;
+    left: 0;
+  }
 `
 
 const StyledInnerCard = styled.div`
@@ -70,7 +84,7 @@ const StyledTabItem = styled.div`
   border-radius: 5px;
   color: white;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 250ms;
 `
 
 const About = props => {
@@ -141,22 +155,27 @@ const About = props => {
                   />
                 </StyledFrontCard>
                 <StyledBackCard>
-                  <div>
-                    <div className="flex ">
-                      <FaBirthdayCake className="mr-3" />
-                      <p style={{ margin: 0 }}>12 March 2000</p>
-                    </div>
-                    <div className="flex ">
-                      <FaGraduationCap className="mr-3" />
-                      <p style={{ margin: 0 }}>
-                        Universitas Multimedia Nusantara
-                      </p>
-                    </div>
-                    <div className="flex ">
-                      <FaInfoCircle className="mr-3" />
-                      <p style={{ margin: 0 }}>12 March 2000</p>
-                    </div>
-                  </div>
+                  <p className="text-center text-secondary font-semibold">
+                    Andi Usman Balo
+                  </p>
+                  <ul>
+                    <li>
+                      <FaBirthdayCake className="list-icon " />
+                      12 March 2000
+                    </li>
+                    <li>
+                      <FaGraduationCap className="list-icon " />
+                      Universitas Multimedia Nusantara
+                    </li>
+                    <li>
+                      <FaGamepad className="list-icon " />
+                      Gaming, Football, Coding, Eating
+                    </li>
+                    <li>
+                      <FaInfoCircle className="list-icon" />
+                      Cat Lover, Startup Enthusiast, INFJ-A, Dislikes Coffee
+                    </li>
+                  </ul>
                 </StyledBackCard>
               </StyledInnerCard>
             </StyledProfileCard>

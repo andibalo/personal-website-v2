@@ -12,7 +12,14 @@
             "company": "Dorado.id",
             "from": "January 2020",
             "to":"January 2021",
-            "jobDescription": ["test", "test 2", "test 3"]
+            "jobDescription": ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"]
+        },
+        {
+            "jobTitle": "Web Development Instructor",
+            "company": "BinaryKiddo",
+            "from": "Sep 2019",
+            "to":"Feb 2020",
+            "jobDescription": ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"]
         }
     ]
 }

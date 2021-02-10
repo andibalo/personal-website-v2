@@ -7,6 +7,8 @@
   --white: #ffffff;
   --grey: #80807a;
   --black: #000000;
+  --black-light: #252526;
+  --black-lighter: #2e2e2e;
   --border-radius: 5px;
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
