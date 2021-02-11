@@ -13,7 +13,7 @@ const Project = props => {
   const revealContainer = useRef(null)
 
   return (
-    <div ref={revealContainer}>
+    <div ref={revealContainer} id="project">
       <Section className="container">
         <SectionHeader title="My Projects" />
         <div className="mt-10">

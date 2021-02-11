@@ -79,7 +79,7 @@ const Experience = () => {
 
   const revealContainer = useRef(null)
   return (
-    <div ref={revealContainer}>
+    <div ref={revealContainer} id="experience">
       <Section className="container">
         <SectionHeader title="Experience" />
         <div className="flex mt-10 justify-center ">

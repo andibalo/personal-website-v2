@@ -125,7 +125,7 @@ const About = props => {
   }
 
   return (
-    <div ref={revealContainer}>
+    <div ref={revealContainer} id="about">
       <Section className="container">
         <SectionHeader title="About Me" />
         <div className="sectionContent flex mt-10">
