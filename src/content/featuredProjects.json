@@ -1,0 +1,18 @@
+[
+    {
+        "projectTitle":"Techshop",
+        "projectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque morbi enim elit consectetur porta diam sed commodo vitae. Nibh id elementum, eu ut in erat. In odio vivamus sagittis vivamus lorem blandit molestie. Egestas.",
+        "projectTech" : ["React", "Redux", "Node", "Express"],
+        "githubLink": "https://github.com/andibalo/TechShop",
+        "demoLink":"https://mighty-basin-56593.herokuapp.com/",
+        "image":"techshop.jpg"
+    },
+    {
+        "projectTitle":"Zealousy",
+        "projectDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque morbi enim elit consectetur porta diam sed commodo vitae. Nibh id elementum, eu ut in erat. In odio vivamus sagittis vivamus lorem blandit molestie. Egestas.",
+        "projectTech" : ["React", "Redux", "Node", "Express"],
+        "githubLink": "https://github.com/andibalo/Zealousy",
+        "demoLink":"https://warm-cove-14028.herokuapp.com/",
+        "image":"zealousys.jpg"
+    }
+]

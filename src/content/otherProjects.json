@@ -1,0 +1,45 @@
+[
+    {
+        "projectTitle":"HelloDoc",
+        "projectDescription": "Doctor Consultation App created with React Native and Firebase",
+        "demoLink":"",
+        "githubLink":"https://github.com/andibalo/HelloDoc",
+        "techStack":["React Native","Firebase", "Redux"]
+    },
+    {
+        "projectTitle":"Cozie",
+        "projectDescription": "Airbnb clone created with Ionic + Angular",
+        "demoLink":"",
+        "githubLink":"https://github.com/andibalo/Cozie",
+        "techStack":["Ionic","Angular", "Firebase", "Express"]
+    },
+    {
+        "projectTitle":"Codemy",
+        "projectDescription": "A startup coding academy website",
+        "demoLink":"https://andibalo.github.io/codemy/",
+        "githubLink":"https://github.com/andibalo/codemy",
+        "techStack":["HTML","CSS", "Bootstrap", "jQuery"]
+    },
+    {
+        "projectTitle":"Personal Website v1",
+        "projectDescription": "My personal website created with Gatsby.js + Material-UI & Prismic as CMS",
+        "demoLink":"https://andibalo.github.io/andibalo.github.io/",
+        "githubLink":"https://github.com/andibalo/andibalo.github.io",
+        "techStack":["Gatsby.js","Prismic", "Material-UI"]
+    },
+    {
+        "projectTitle":"Contact Manager",
+        "projectDescription": "Contact manager app where users are able to perform CRUD operations on contact information",
+        "demoLink":"https://andibalo.github.io/ReactContactManager/",
+        "githubLink":"https://github.com/andibalo/ReactContactManager",
+        "techStack":["React","Redux", "Bootstrap"]
+    },
+    {
+        "projectTitle":"BookIt",
+        "projectDescription": "Responsive booking services website",
+        "demoLink":"https://andibalo.github.io/BookIt/",
+        "githubLink":"https://github.com/andibalo/BookIt",
+        "techStack":["HTML","CSS", "SASS"]
+    }
+
+]

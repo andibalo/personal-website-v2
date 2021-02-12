@@ -6,23 +6,43 @@ const Navbar = () => {
   return (
     <div className="flex justify-end pt-3 absolute right-0 mr-10r">
       <ul className="flex text-white m-0 items-center">
-        <li className="p-3 mx-2">
-          <Link to="about" smooth={true} duration={1000}>
+        <li className=" mx-2">
+          <Link
+            className="p-3 cursor-pointer hover:text-primary transition duration-300"
+            to="about"
+            smooth={true}
+            duration={1000}
+          >
             About
           </Link>
         </li>
-        <li className="p-3 mx-2">
-          <Link to="experience" smooth={true} duration={1500}>
+        <li className=" mx-2">
+          <Link
+            className="p-3 cursor-pointer hover:text-primary transition duration-300"
+            to="experience"
+            smooth={true}
+            duration={1500}
+          >
             Experience
           </Link>
         </li>
-        <li className="p-3 mx-2">
-          <Link to="project" smooth={true} duration={2000}>
+        <li className="mx-2">
+          <Link
+            className="p-3 cursor-pointer hover:text-primary transition duration-300"
+            to="project"
+            smooth={true}
+            duration={2000}
+          >
             Projects
           </Link>
         </li>
-        <li className="p-3 mx-2">
-          <Link to="contact" smooth={true} duration={2000}>
+        <li className="mx-2">
+          <Link
+            className="p-3 cursor-pointer hover:text-primary transition duration-300 ease"
+            to="contact"
+            smooth={true}
+            duration={2000}
+          >
             Contact
           </Link>
         </li>

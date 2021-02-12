@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
 import styled from "styled-components"
@@ -29,7 +30,7 @@ const StyledContactCard = styled.div`
   }
 
   .triangle {
-    left: -65px;
+    left: -12%;
     top: 15%;
     color: var(--primary-blue);
   }
@@ -51,10 +52,15 @@ const Contact = props => {
                 <div>
                   <h3 className="text-white mb-1">Contact Information</h3>
                 </div>
+                <ul>
+                  <li>0895383118118 (WA)</li>
+                  <li>andibalo213@gmail.com</li>
+                  <li>test</li>
+                </ul>
               </div>
             </div>
             <div className=" contactForm p-10 rounded-r-lg relative">
-              <GoTriangleLeft className="absolute triangle text-7xl" />
+              <GoTriangleLeft className="absolute triangle text-8xl" />
               <div>
                 <div>
                   <h3 className="text-white mb-1">Get In Touch</h3>
