@@ -11,4 +11,4 @@ tech:
   - MongoDB
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque morbi enim elit consectetur porta diam sed commodo vitae. Nibh id elementum, eu ut in erat. In odio vivamus sagittis vivamus lorem blandit molestie. Egestas.
+It is an E-Commerce application that sells electronics. Features include an admin dashboard, Stripe-integrated payment system, rating system and many more. It was created using the MERN stack with Ant Design and Firebase.

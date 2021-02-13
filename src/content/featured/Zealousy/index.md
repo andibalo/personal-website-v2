@@ -11,4 +11,4 @@ tech:
   - MongoDB
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque morbi enim elit consectetur porta diam sed commodo vitae. Nibh id elementum, eu ut in erat. In odio vivamus sagittis vivamus lorem blandit molestie. Egestas.
+A task manager application with JWT based authentication system and basic analytics interface. It was created using React, Redux, Material-UI in the frontend and Node, Express, MongoDB/Mongoose in the backend.

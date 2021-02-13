@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
 import styled from "styled-components"

@@ -131,17 +131,18 @@ const About = props => {
         <div className="sectionContent flex mt-10">
           <div className="description flex-1">
             <p className="text-white">
-              Sit ac mattis in at pulvinar aliquet platea nisi.
+              Hello world! My name is Andi, a Software Engineer based in
+              Indonesia, Jakarta.
             </p>
             <p className="text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit
-              euismod ullamcorper pulvinar fames cursus egestas at quis nisl.
-              Gravida nec vulputate pellentesque vitae.
+              I'm a highly passionate Software Engineer who posseses strong
+              knowledge in both frontend and backend development in addition to
+              strong fundamentals in building user interface with positive user
+              experience in mind.
             </p>
             <p className="text-white">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh
-              parturient eget congue turpis. Est elementum eget enim dictum
-              semper dictum cursus duis sit. Mattis.
+              I love learning about technology. Currently my interests include
+              Web Development, Mobile Development, UI/UX and SEO.
             </p>
             <Button title="View Github" />
           </div>

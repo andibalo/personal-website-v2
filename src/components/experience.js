@@ -8,6 +8,10 @@ import ExperienceData from "../content/experience.json"
 import { CSSTransition } from "react-transition-group"
 import { MdKeyboardArrowRight } from "@react-icons/all-files/md/MdKeyboardArrowRight"
 
+const StyledTimelineContainer = styled.div`
+  min-height: 360px;
+`
+
 const StyledTimelineCircle = styled.div`
   width: 50px;
   height: 50px;
@@ -82,7 +86,7 @@ const Experience = () => {
     <div ref={revealContainer} id="experience">
       <Section className="container">
         <SectionHeader title="Experience" />
-        <div className="flex mt-10 justify-center ">
+        <StyledTimelineContainer className="flex mt-10 justify-center ">
           <StyledTimelineNav>
             <StyledTimelineLine />
             <StyledTimelineCircle
@@ -128,7 +132,7 @@ const Experience = () => {
               ))}
             </div>
           </StyledTabContent>
-        </div>
+        </StyledTimelineContainer>
       </Section>
     </div>
   )

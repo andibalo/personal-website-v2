@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { scrollToTop } from "../utils/functions"
 
 const StyledBlueLine = styled.div`
   width: 8px;
@@ -37,7 +38,9 @@ const Sidebar = () => {
         {!data?.placeholderImage?.childImageSharp?.fluid ? (
           <div>Picture not found</div>
         ) : (
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          <div onClick={scrollToTop} className="cursor-pointer">
+            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          </div>
         )}
       </div>
 
