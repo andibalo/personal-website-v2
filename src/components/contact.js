@@ -157,7 +157,7 @@ const Contact = props => {
                     required
                   ></textarea>
 
-                  <div className="flex">
+                  <div className="flex items-center">
                     <button
                       type="Submit"
                       disabled={isSending}
@@ -172,7 +172,7 @@ const Contact = props => {
                       <svg
                         x="0px"
                         y="0px"
-                        className="animate-spin h-10 w-10 mr-3"
+                        className="animate-spin h-8 w-8 mr-3"
                         viewBox="0 0 100 100"
                         enable-background="new 0 0 0 0"
                       >

@@ -8,6 +8,7 @@ import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
 import sr from "../utils/scroll-reveal/sr"
 import srConfig from "../utils/scroll-reveal/sr-config"
+import ReactTooltip from "react-tooltip"
 import { FaBirthdayCake } from "@react-icons/all-files/fa/FaBirthdayCake"
 import { FaInfoCircle } from "@react-icons/all-files/fa/FaInfoCircle"
 import { FaGraduationCap } from "@react-icons/all-files/fa/FaGraduationCap"
@@ -87,6 +88,146 @@ const StyledTabItem = styled.div`
   transition: all 250ms;
 `
 
+const othersdComponents = [
+  {
+    name: "Github/Version Control",
+    component: (
+      <SiGithub
+        data-tip
+        data-for="others-0"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "Figma",
+    component: (
+      <SiFigma
+        data-tip
+        data-for="others-1"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "Heroku/Deployment",
+    component: (
+      <SiHeroku
+        data-tip
+        data-for="others-2"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+]
+
+const backendComponents = [
+  {
+    name: "Node/Express",
+    component: (
+      <SiNodeDotJs
+        data-tip
+        data-for="backend-0"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "MongoDB/Mongoose",
+    component: (
+      <SiMongodb
+        data-tip
+        data-for="backend-1"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "PHP",
+    component: (
+      <SiPhp
+        data-tip
+        data-for="backend-2"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+]
+
+const frontendComponents = [
+  {
+    name: "React/React Native",
+    component: (
+      <SiReact
+        data-tip
+        data-for="frontend-0"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+
+  {
+    name: "Redux",
+    component: (
+      <SiRedux
+        data-tip
+        data-for="frontend-1"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "HTML",
+    component: (
+      <SiHtml5
+        data-tip
+        data-for="frontend-2"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "CSS",
+    component: (
+      <SiCss3
+        data-tip
+        data-for="frontend-3"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "Javascript",
+    component: (
+      <SiJavascript
+        data-tip
+        data-for="frontend-4"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "jQuery",
+    component: (
+      <SiJquery
+        data-tip
+        data-for="frontend-5"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+  {
+    name: "Bootstrap",
+    component: (
+      <SiBootstrap
+        data-tip
+        data-for="frontend-6"
+        className="text-6xl text-white mr-3"
+      />
+    ),
+  },
+]
+
 const About = props => {
   const data = useStaticQuery(graphql`
     query {
@@ -135,7 +276,7 @@ const About = props => {
               Indonesia, Jakarta.
             </p>
             <p className="text-white">
-              I'm a highly passionate Software Engineer who posseses strong
+              I'm a highly passionate Software Engineer who possesses strong
               knowledge in both frontend and backend development in addition to
               strong fundamentals in building user interface with positive user
               experience in mind.
@@ -144,7 +285,11 @@ const About = props => {
               I love learning about technology. Currently my interests include
               Web Development, Mobile Development, UI/UX and SEO.
             </p>
-            <Button title="View Github" />
+            <Button
+              title="View Github"
+              href="https://github.com/andibalo"
+              newWindow={true}
+            />
           </div>
           <div className="flex-1">
             <StyledProfileCard>
@@ -220,13 +365,22 @@ const About = props => {
               style={{ display: isFrontend ? "block" : "none" }}
             >
               <div className=" flex items-center justify-center ">
-                <SiReact className="text-6xl text-white mr-3" />
-                <SiRedux className="text-6xl text-white mr-3" />
-                <SiHtml5 className="text-6xl text-white mr-3" />
-                <SiCss3 className="text-6xl text-white mr-3" />
-                <SiJavascript className="text-6xl text-white mr-5" />
-                <SiJquery className="text-6xl text-white mr-3" />
-                <SiBootstrap className="text-6xl text-white mr-3" />
+                {frontendComponents &&
+                  frontendComponents.map((frontend, i) => (
+                    <>
+                      <ReactTooltip
+                        id={`frontend-${i}`}
+                        place="top"
+                        effect="solid"
+                        backgroundColor="var(--grey)"
+                        borderColor="var(--grey)"
+                        className="shadow-xl"
+                      >
+                        {frontend.name}
+                      </ReactTooltip>
+                      {frontend.component}
+                    </>
+                  ))}
               </div>
             </div>
           </CSSTransition>
@@ -234,9 +388,22 @@ const About = props => {
           <CSSTransition in={isBackend} timeout={250} classNames="fade">
             <div style={{ display: isBackend ? "block" : "none" }}>
               <div className=" flex items-center justify-center ">
-                <SiNodeDotJs className="text-6xl text-white mr-3" />
-                <SiMongodb className="text-6xl text-white mr-3" />
-                <SiPhp className="text-6xl text-white mr-3" />
+                {backendComponents &&
+                  backendComponents.map((backend, i) => (
+                    <>
+                      <ReactTooltip
+                        id={`backend-${i}`}
+                        place="top"
+                        effect="solid"
+                        backgroundColor="var(--grey)"
+                        borderColor="var(--grey)"
+                        className="shadow-xl"
+                      >
+                        {backend.name}
+                      </ReactTooltip>
+                      {backend.component}
+                    </>
+                  ))}
               </div>
             </div>
           </CSSTransition>
@@ -244,9 +411,22 @@ const About = props => {
           <CSSTransition in={isOthers} timeout={250} classNames="fade">
             <div style={{ display: isOthers ? "block" : "none" }}>
               <div className="flex items-center justify-center ">
-                <SiGithub className="text-6xl text-white mr-3" />
-                <SiFigma className="text-6xl text-white mr-3" />
-                <SiHeroku className="text-6xl text-white mr-3" />
+                {othersdComponents &&
+                  othersdComponents.map((others, i) => (
+                    <>
+                      <ReactTooltip
+                        id={`others-${i}`}
+                        place="top"
+                        effect="solid"
+                        backgroundColor="var(--grey)"
+                        borderColor="var(--grey)"
+                        className="shadow-xl"
+                      >
+                        {others.name}
+                      </ReactTooltip>
+                      {others.component}
+                    </>
+                  ))}
               </div>
             </div>
           </CSSTransition>

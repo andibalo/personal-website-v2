@@ -5,6 +5,7 @@
             "company": "Agile Technica",
             "from": "January 2021",
             "to":null,
+            "companyLink":"https://www.agiletechnica.com/",
             "jobDescription": ["Developing mobile applicatons using React Native and integrate it with Frappe backend", "Enhancing applications by identifying opportunities for improvement, making recommendations and implementing features based on the business requirements", "Maintaining and improving existing codebases and peer review code changes"]
         },
         {
@@ -12,6 +13,7 @@
             "company": "Dorado.id",
             "from": "January 2020",
             "to":"January 2021",
+            "companyLink":"https://www.dorado.id/",
             "jobDescription": ["Create website layout using HTML, CSS, Javascript/jQuery and Wordpress as CMS", "Integrate back-end services and database using PHP, MySQL", "Cooperate with UI/UX designers to match visual design intent"]
         },
         {
@@ -19,6 +21,7 @@
             "company": "BinaryKiddo",
             "from": "Sep 2019",
             "to":"Feb 2020",
+            "companyLink":"",
             "jobDescription": ["Formulate academy curriculum for full stack development (HTML, CSS, Javascript/jQuery, Bootstrap, PHP, MySQL)", "Teach full stack development curriculum to students and keep track of student's progress", "Report student's progress and discuss ways to improve student's progress with the their parents and the academy owner"]
         }
     ]

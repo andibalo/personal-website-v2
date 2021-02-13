@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 const Home = props => {
   const [isMounted, setIsMounted] = useState(false)
@@ -14,7 +15,11 @@ const Home = props => {
   const three = (
     <h1 className="mb-5 text-primary text-7xl">Full Stack Developer</h1>
   )
-  const four = <Button title="Get In Touch" />
+  const four = (
+    <Link to="contact" smooth={true} duration={2000}>
+      <Button title="Get In Touch" role="button" />
+    </Link>
+  )
 
   const items = [one, two, three, four]
 

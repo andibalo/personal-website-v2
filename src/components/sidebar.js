@@ -1,13 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  GithubOutlined,
-  LinkedinOutlined,
-  InstagramOutlined,
-} from "@ant-design/icons"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { scrollToTop } from "../utils/functions"
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
+import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 
 const StyledBlueLine = styled.div`
   width: 8px;
@@ -49,17 +47,17 @@ const Sidebar = () => {
           href="https://github.com/andibalo"
           target="_blank"
           rel="noreferrer"
-          className="mb-2 text-white text-2xl hover:text-primary transition ease duration-300"
+          className="mb-4 text-white text-2xl hover:text-primary transition ease duration-300"
         >
-          <GithubOutlined />
+          <FaGithub />
         </a>
         <a
           href="https://www.linkedin.com/in/andi-usman-balo-284707182/"
           target="_blank"
           rel="noreferrer"
-          className="mb-2 text-white text-2xl hover:text-primary transition ease duration-300"
+          className="mb-4 text-white text-2xl hover:text-primary transition ease duration-300"
         >
-          <LinkedinOutlined />
+          <FaLinkedin />
         </a>
         <a
           href="https://www.instagram.com/andibalo213/"
@@ -67,7 +65,7 @@ const Sidebar = () => {
           rel="noreferrer"
           className="mb-2 text-white text-2xl hover:text-primary transition ease duration-300"
         >
-          <InstagramOutlined />
+          <FaInstagram />
         </a>
 
         <StyledBlueLine className="bg-primary mt-3" />

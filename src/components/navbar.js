@@ -47,7 +47,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="p-3 mx-2 mr-0 pr-0">
-          <Button title="Resume" />
+          <Button
+            title="Resume"
+            href="../static/Andi_Usman_Balo_CV.pdf"
+            download
+          />
         </li>
       </ul>
     </div>

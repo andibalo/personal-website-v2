@@ -114,7 +114,14 @@ const Experience = () => {
                   <div hidden={activeTabId !== i}>
                     <h3 className="mb-3">
                       {exp.jobTitle}{" "}
-                      <span className="companyName">@ {exp.company}</span>
+                      <a
+                        className="companyName"
+                        href={exp.companyLink || "#"}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        @ {exp.company}
+                      </a>
                     </h3>
                     <h5 className="workPeriod">
                       {exp.from} - {exp.to ? exp.to : "Present"}
