@@ -13,6 +13,11 @@ const StyledBlueLine = styled.div`
   height: 100px;
 `
 
+const StyledSidebar = styled.div`
+  max-width: 150px;
+  z-index: 10;
+`
+
 const Sidebar = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -27,10 +32,7 @@ const Sidebar = () => {
   `)
 
   return (
-    <div
-      className="fixed w-full h-full flex flex-col justify-between px-3 pt-3"
-      style={{ maxWidth: 150 }}
-    >
+    <StyledSidebar className="fixed w-full h-full flex flex-col justify-between px-3 pt-3">
       <div className="logo">
         {!data?.placeholderImage?.childImageSharp?.fluid ? (
           <div>Picture not found</div>
@@ -40,12 +42,34 @@ const Sidebar = () => {
       </div>
 
       <div className="social-media flex flex-col items-center">
-        <GithubOutlined className="mb-2 text-white text-2xl" />
-        <LinkedinOutlined className="mb-2 text-white text-2xl" />
-        <InstagramOutlined className="mb-2 text-white text-2xl" />
+        <a
+          href="https://github.com/andibalo"
+          target="_blank"
+          rel="noreferrer"
+          className="mb-2 text-white text-2xl hover:text-primary transition ease duration-300"
+        >
+          <GithubOutlined />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/andi-usman-balo-284707182/"
+          target="_blank"
+          rel="noreferrer"
+          className="mb-2 text-white text-2xl hover:text-primary transition ease duration-300"
+        >
+          <LinkedinOutlined />
+        </a>
+        <a
+          href="https://www.instagram.com/andibalo213/"
+          target="_blank"
+          rel="noreferrer"
+          className="mb-2 text-white text-2xl hover:text-primary transition ease duration-300"
+        >
+          <InstagramOutlined />
+        </a>
+
         <StyledBlueLine className="bg-primary mt-3" />
       </div>
-    </div>
+    </StyledSidebar>
   )
 }
 

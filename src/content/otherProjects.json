@@ -11,7 +11,7 @@
         "projectDescription": "Airbnb clone created with Ionic + Angular",
         "demoLink":"",
         "githubLink":"https://github.com/andibalo/Cozie",
-        "techStack":["Ionic","Angular", "Firebase", "Express"]
+        "techStack":["Ionic","Angular", "Firebase"]
     },
     {
         "projectTitle":"Codemy",

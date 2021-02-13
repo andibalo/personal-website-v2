@@ -22,6 +22,26 @@ const StyledFeaturedProject = styled.div`
     grid-row: 1/-1;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      top: 0;
+      height: 100%;
+      background-color: rgba(15, 135, 230, 0.7);
+      left: 0;
+      z-index: 1;
+      position: absolute;
+      opacity: 0;
+      transition: all 0.3s;
+      pointer-events: none;
+    }
   }
 
   .projectContent {
@@ -29,6 +49,7 @@ const StyledFeaturedProject = styled.div`
     grid-column: ${({ isAlternate }) => (isAlternate ? "1 / 7" : "7 / -1")};
 
     position: relative;
+    z-index: 2;
   }
 
   .projectHeader {
@@ -65,13 +86,12 @@ const StyledOtherProjects = styled.div`
   .projectDescription {
     min-height: 100px;
   }
+
+ 
+  }
 `
 
-const StyledProjectTags = styled.div``
-
 const Project = props => {
-  useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
-
   const data = useStaticQuery(graphql`
     query {
       featured: allMarkdownRemark(
@@ -99,21 +119,38 @@ const Project = props => {
       }
     }
   `)
-  console.log(data)
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node)
 
-  const revealContainer = useRef(null)
+  const revealHeader = useRef(null)
+  const revealFeatured = useRef([])
+
+  const revealOtherHeader = useRef(null)
+  const revealOtherProjects = useRef([])
+
+  useEffect(() => {
+    sr.reveal(revealHeader.current, srConfig())
+    sr.reveal(revealOtherHeader.current, srConfig())
+
+    revealFeatured.current.forEach((ref, i) =>
+      sr.reveal(ref, srConfig(i * 100))
+    )
+    revealOtherProjects.current.forEach((ref, i) =>
+      sr.reveal(ref, srConfig(i * 75))
+    )
+  }, [])
 
   let isAlternate = true
 
   return (
-    <div ref={revealContainer} id="project">
+    <div id="project">
       <Section className="container">
         <SectionHeader title="My Projects" />
         <div className="featuredProjects">
           <div className="mt-10">
-            <h2 className="text-center text-primary ">Featured Projects</h2>
+            <h2 className="text-center text-primary " ref={revealHeader}>
+              Featured Projects
+            </h2>
           </div>
           <div className="mt-10">
             {featuredProjects &&
@@ -127,10 +164,17 @@ const Project = props => {
                   <StyledFeaturedProject
                     isAlternate={isAlternate}
                     key={i}
+                    ref={el => (revealFeatured.current[i] = el)}
                     className="mt-16"
                   >
                     <div className="projectImage">
-                      <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                      <a
+                        href={external || "#"}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                      </a>
                     </div>
                     <div className="projectContent">
                       <div
@@ -146,7 +190,7 @@ const Project = props => {
                         <h3 className=" text-white">{title}</h3>
                       </div>
 
-                      <div className="projectDescription p-5 bg-secondary-light text-justify text-white shadow-xl rounded-xl">
+                      <div className="projectDescription p-7 bg-secondary-light text-justify text-white shadow-xl rounded-xl">
                         <div
                           className="mb-0"
                           dangerouslySetInnerHTML={{ __html: html }}
@@ -198,11 +242,20 @@ const Project = props => {
         </div>
 
         <StyledOtherProjects className="mt-20">
-          <h2 className="text-center text-primary mb-16 ">Other Projects</h2>
+          <h2
+            className="text-center text-primary mb-16 "
+            ref={revealOtherHeader}
+          >
+            Other Projects
+          </h2>
           <div className="otherProjectsGrid">
             {otherProjects &&
               otherProjects.map((otherProject, i) => (
-                <div className="p-7 bg-secondary-light rounded-lg shadow-xl">
+                <div
+                  key={`${otherProject.projectTitle}-${i}`}
+                  ref={el => (revealOtherProjects.current[i] = el)}
+                  className="gridItem p-7 bg-secondary-light rounded-lg shadow-xl "
+                >
                   <h4 className="text-white">{otherProject.projectTitle}</h4>
                   <p className="text-gray projectDescription">
                     {otherProject.projectDescription}
