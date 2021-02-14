@@ -70,6 +70,15 @@ const StyledFeaturedProject = styled.div`
   .projectDescription p {
     margin: 0;
   }
+
+  @media (max-width: 767px) {
+    .projectImage,
+    .projectContent {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      margin-bottom: 20px;
+    }
+  }
 `
 
 const StyledOtherProjects = styled.div`
@@ -87,7 +96,10 @@ const StyledOtherProjects = styled.div`
     min-height: 100px;
   }
 
- 
+  @media (max-width: 400px) {
+    .otherProjectsGrid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
   }
 `
 
@@ -121,6 +133,8 @@ const Project = props => {
   `)
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node)
+
+  console.log(featuredProjects)
 
   const revealHeader = useRef(null)
   const revealFeatured = useRef([])

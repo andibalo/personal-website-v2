@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 const StyledMobileSidebar = styled.div`
   position: fixed;
@@ -12,54 +13,107 @@ const StyledMobileSidebar = styled.div`
   bottom: 0;
   height: 100vh;
   width: 75vw;
+  z-index: 100;
   transform: ${({ showSidebar }) =>
     showSidebar ? " translateX(0vw)" : " translateX(100vw)"};
 `
 
-const MobileSidebar = ({ showSidebar }) => {
+const StyledSidebarOverlay = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+  opacity: ${({ showSidebar }) => (showSidebar ? " 1" : " 0")};
+  pointer-events: ${({ showSidebar }) => (showSidebar ? " auto" : " none")};
+`
+
+const MobileSidebar = ({ showSidebar, handleShowSidebar }) => {
   return (
-    <StyledMobileSidebar
-      showSidebar={showSidebar}
-      className="bg-primary shadow-xl transition ease duration-300 flex items-center justify-center"
-    >
-      <div className="flex  flex-col">
-        <ul className="m-0 text-center">
-          <li className="mb-8 text-xl text-white">About</li>
-          <li className="mb-8 text-xl text-white">Experience</li>
-          <li className="mb-8 text-xl text-white">Projects</li>
-          <li className="mb-8 text-xl text-white">Contact</li>
-        </ul>
-        <div className="flex justify-center">
-          <Button title="Resume" dark={true} />
+    <React.Fragment>
+      <StyledSidebarOverlay
+        showSidebar={showSidebar}
+        onClick={handleShowSidebar}
+        className="fixed transition ease duration-300 md:hidden"
+      ></StyledSidebarOverlay>
+      <StyledMobileSidebar
+        showSidebar={showSidebar}
+        className="bg-primary shadow-xl transition ease duration-300 flex items-center justify-center"
+      >
+        <div className="flex  flex-col">
+          <ul className="m-0 text-center">
+            <li className=" mb-8">
+              <Link
+                className="p-3 text-xl text-white"
+                to="about"
+                smooth={true}
+                duration={1000}
+              >
+                About
+              </Link>
+            </li>
+            <li className=" mb-8">
+              <Link
+                className="p-3 text-xl text-white"
+                to="experience"
+                smooth={true}
+                duration={1500}
+              >
+                Experience
+              </Link>
+            </li>
+            <li className="mb-8">
+              <Link
+                className="p-3 text-xl text-white"
+                to="project"
+                smooth={true}
+                duration={2000}
+              >
+                Projects
+              </Link>
+            </li>
+            <li className="mb-8">
+              <Link
+                className="p-3 text-xl text-white"
+                to="contact"
+                smooth={true}
+                duration={2000}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+          <div className="flex justify-center">
+            <Button title="Resume" dark={true} />
+          </div>
+          <div className="flex justify-center mt-8">
+            <a
+              href="https://github.com/andibalo"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white text-2xl p-2"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/andi-usman-balo-284707182/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white text-2xl p-2"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://www.instagram.com/andibalo213/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white text-2xl p-2"
+            >
+              <FaInstagram />
+            </a>
+          </div>
         </div>
-        <div className="flex justify-center mt-8">
-          <a
-            href="https://github.com/andibalo"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white text-2xl p-2"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/andi-usman-balo-284707182/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white text-2xl p-2"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://www.instagram.com/andibalo213/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white text-2xl p-2"
-          >
-            <FaInstagram />
-          </a>
-        </div>
-      </div>
-    </StyledMobileSidebar>
+      </StyledMobileSidebar>
+    </React.Fragment>
   )
 }
 

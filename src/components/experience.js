@@ -44,6 +44,10 @@ const StyledTimelineNav = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 460px) {
+    margin-right: 20px;
+  }
 `
 
 const StyledTabContent = styled.div`

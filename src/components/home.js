@@ -6,6 +6,20 @@ import styled from "styled-components"
 
 const StyledHomeContainer = styled.div`
   margin: auto;
+
+  @media (max-width: 390px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    h4 {
+      font-size: 1.3rem;
+    }
+  }
 `
 
 const Home = props => {
@@ -16,15 +30,17 @@ const Home = props => {
   }, [])
 
   const one = (
-    <h4 className="mb-1 text-gray md:text-2xl lg:text-4xl">Hi, my name is</h4>
+    <h4 className="mb-1 text-gray text-2xl sm:text-2xl md:text-3xl lg:text-4xl">
+      Hi, my name is
+    </h4>
   )
   const two = (
-    <h2 className="mb-1 text-white md:text-3xl lg:text-5xl ">
+    <h2 className="mb-1 text-white text-3xl sm:text-3xl md:text-4xl lg:text-5xl ">
       Andi Usman Balo
     </h2>
   )
   const three = (
-    <h1 className="mb-5 text-primary md:text-5xl lg:text-7xl">
+    <h1 className="mb-5 text-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
       Full Stack Developer
     </h1>
   )

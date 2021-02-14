@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
 import { Link, animateScroll as scroll } from "react-scroll"
 import MobileSidebar from "./molecules/MobileSidebar"
@@ -8,7 +8,13 @@ import styled from "styled-components"
 
 const StyledNavbar = styled.div`
   .gatsby-image-wrapper {
-    width: 100px;
+    width: 140px;
+  }
+
+  @media (max-width: 767px) {
+    .gatsby-image-wrapper {
+      width: 100px;
+    }
   }
 `
 
@@ -27,16 +33,31 @@ const Navbar = () => {
 
   const [showSidebar, setShowSidebar] = useState(false)
 
+  const [isScrolled, setIsScrolled] = useState(false)
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setIsScrolled(window.scrollY > 50)
+    })
+  }, [])
+
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar)
   }
 
   return (
     <React.Fragment>
-      <MobileSidebar showSidebar={showSidebar} />
-      <StyledNavbar className="flex justify-between md:justify-end pt-3 absolute inset-x-0  sm:mx-8 lg:mx-20 xl:mx-10r">
+      <MobileSidebar
+        showSidebar={showSidebar}
+        handleShowSidebar={handleShowSidebar}
+      />
+      <StyledNavbar
+        isScrolled={isScrolled}
+        className={`${
+          isScrolled && "bg-secondary-light shadow-xl"
+        } flex justify-between  lg:justify-end pt-3 absolute inset-x-0  px-8 lg:px-20 xl:px-10r`}
+      >
         <Img
-          className="md:hidden"
+          className="lg:hidden"
           fluid={data.placeholderImage.childImageSharp.fluid}
         />
         <button

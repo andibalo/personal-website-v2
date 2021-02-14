@@ -26,9 +26,14 @@ import {
 } from "../components/molecules/FlipCard"
 
 const StyledAboutContent = styled.div`
+  .profileCard {
+    width: 300px;
+    height: 400px;
+  }
+
   @media (max-width: 767px) {
     .description,
-    .profileCard {
+    .profileCardContainer {
       flex: 0 0 100%;
     }
 
@@ -36,8 +41,15 @@ const StyledAboutContent = styled.div`
       order: 1;
     }
 
-    .profileCard {
+    .profileCardContainer {
       margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (max-width: 460px) {
+    .profileCard {
+      width: 250px;
+      height: 370px;
     }
   }
 `
@@ -48,6 +60,10 @@ const StyledTabItem = styled.div`
   color: white;
   cursor: pointer;
   transition: all 250ms;
+
+  @media (max-width: 400px) {
+    padding: 5px 10px;
+  }
 `
 
 const About = props => {
@@ -113,16 +129,16 @@ const About = props => {
               newWindow={true}
             />
           </div>
-          <div className="profileCard flex-1 px-5">
-            <Card>
-              <CardInner className="shadow-xl">
+          <div className="profileCardContainer flex-1 px-5">
+            <Card className="profileCard">
+              <CardInner>
                 <FrontCard>
                   <Img
                     fluid={data.placeholderImage.childImageSharp.fluid}
                     style={{ maxHeight: "400px", borderRadius: "10px" }}
                   />
                 </FrontCard>
-                <BackCard>
+                <BackCard className="p-8 bg-primary">
                   <p className="text-center text-secondary font-semibold">
                     Andi Usman Balo
                   </p>
@@ -149,10 +165,10 @@ const About = props => {
             </Card>
           </div>
         </StyledAboutContent>
-        <div className="skillsContainer mt-10">
+        <div className="skillsContainer mt-10 container">
           <div className="skillsTab flex justify-center">
             <StyledTabItem
-              className="skillsTabItem mr-5"
+              className="skillsTabItem mr-2 sm:mr-5"
               onClick={e => handleChangeTab(e, "frontend")}
               style={{
                 backgroundColor: isFrontend ? "var(--primary-blue)" : null,
@@ -161,7 +177,7 @@ const About = props => {
               Frontend
             </StyledTabItem>
             <StyledTabItem
-              className="skillsTabItem mr-5"
+              className="skillsTabItem mr-2 sm:mr-5"
               onClick={e => handleChangeTab(e, "backend")}
               style={{
                 backgroundColor: isBackend ? "var(--primary-blue)" : null,
@@ -180,6 +196,7 @@ const About = props => {
             </StyledTabItem>
           </div>
         </div>
+
         <div className="mt-5">
           <CSSTransition in={isFrontend} timeout={250} classNames="fade">
             <div

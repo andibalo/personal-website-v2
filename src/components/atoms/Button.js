@@ -19,6 +19,13 @@ const StyledButtonWrapper = styled.div`
       color: var(--white);
     }
   }
+
+  @media (max-width: 767px) {
+    a,
+    button {
+      padding: 8px 16px;
+    }
+  }
 `
 
 const Button = ({ title, href = null, newWindow, role, download, dark }) => {

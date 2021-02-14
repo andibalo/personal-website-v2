@@ -18,9 +18,18 @@ const StyledSidebar = styled.div`
 
   @media (max-width: 1024px) {
     max-width: 120px;
+
+    .sidebarLogo {
+      display: none;
+    }
+
+    .social-media {
+      position: relative;
+      left: -20px;
+    }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `
@@ -44,7 +53,7 @@ const Sidebar = () => {
         {!data?.placeholderImage?.childImageSharp?.fluid ? (
           <div>Picture not found</div>
         ) : (
-          <div onClick={scrollToTop} className="cursor-pointer">
+          <div onClick={scrollToTop} className="cursor-pointer sidebarLogo">
             <Img fluid={data.placeholderImage.childImageSharp.fluid} />
           </div>
         )}

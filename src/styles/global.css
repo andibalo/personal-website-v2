@@ -74,6 +74,8 @@
   margin: 0;
   overflow: visible;
   opacity: 1 !important;
+  position: relative;
+  z-index: 101;
 }
 .hamburger:hover {
   opacity: 1;
