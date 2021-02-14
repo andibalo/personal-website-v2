@@ -5,11 +5,13 @@ const StyledButtonWrapper = styled.div`
   a,
   button {
     display: inline-block;
-    background-color: transparent;
+    background-color: ${({ dark }) =>
+      dark ? "var(--black-light)" : "transparent"};
     border-radius: 5px;
     padding: 10px 20px;
-    border: 1px solid var(--primary-blue);
-    color: var(--primary-blue);
+    border: ${({ dark }) =>
+      dark ? "1px solid var(--black-light)" : "1px solid var(--primary-blue)"};
+    color: ${({ dark }) => (dark ? " var(--white)" : " var(--primary-blue)")};
     font-family: Roboto;
     transition: all 0.3s;
     &:hover {
@@ -19,7 +21,7 @@ const StyledButtonWrapper = styled.div`
   }
 `
 
-const Button = ({ title, href = null, newWindow, role, download }) => {
+const Button = ({ title, href = null, newWindow, role, download, dark }) => {
   if (role === "button") {
     return (
       <StyledButtonWrapper>
@@ -39,7 +41,7 @@ const Button = ({ title, href = null, newWindow, role, download }) => {
   }
 
   return (
-    <StyledButtonWrapper>
+    <StyledButtonWrapper dark={dark}>
       <a href={href || "#"} target={newWindow ? "_blank" : "_self"}>
         {title}
       </a>

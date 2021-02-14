@@ -15,6 +15,14 @@ const StyledBlueLine = styled.div`
 const StyledSidebar = styled.div`
   max-width: 150px;
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    max-width: 120px;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `
 
 const Sidebar = () => {

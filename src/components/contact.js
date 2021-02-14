@@ -33,7 +33,7 @@ const StyledContactCard = styled.div`
   }
 
   .triangle {
-    left: -12%;
+    left: -70px;
     top: 15%;
     color: var(--primary-blue);
   }

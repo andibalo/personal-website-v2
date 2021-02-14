@@ -10,7 +10,7 @@ const StyledBlueCircle = styled.div`
 const StyledGrayLine = styled.div`
   background-color: var(--grey);
   height: 3px;
-  width: 400px;
+  width: 35%;
 `
 const SectionHeader = ({ title }) => {
   return (

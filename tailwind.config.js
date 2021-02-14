@@ -11,7 +11,13 @@ module.exports = {
       gray: "#80807A",
     },
     container: {
-      padding: "10rem",
+      padding: {
+        DEFAULT: "3rem",
+
+        md: "4rem",
+        lg: "8rem",
+        xl: "10rem",
+      },
     },
     extend: {
       spacing: {

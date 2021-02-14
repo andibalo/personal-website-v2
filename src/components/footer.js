@@ -4,7 +4,7 @@ import { scrollToTop } from "../utils/functions"
 
 const Footer = props => {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <div className="flex flex-col items-center justify-center">
         <FaChevronUp
           className="text-3xl text-primary mb-3 cursor-pointer"

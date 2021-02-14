@@ -13,70 +13,32 @@ import { FaBirthdayCake } from "@react-icons/all-files/fa/FaBirthdayCake"
 import { FaInfoCircle } from "@react-icons/all-files/fa/FaInfoCircle"
 import { FaGraduationCap } from "@react-icons/all-files/fa/FaGraduationCap"
 import { FaGamepad } from "@react-icons/all-files/fa/FaGamepad"
-import { SiReact } from "@react-icons/all-files/si/SiReact"
-import { SiHtml5 } from "@react-icons/all-files/si/SiHtml5"
-import { SiCss3 } from "@react-icons/all-files/si/SiCss3"
-import { SiJavascript } from "@react-icons/all-files/si/SiJavascript"
-import { SiJquery } from "@react-icons/all-files/si/SiJquery"
-import { SiRedux } from "@react-icons/all-files/si/SiRedux"
-import { SiBootstrap } from "@react-icons/all-files/si/SiBootstrap"
-import { SiNodeDotJs } from "@react-icons/all-files/si/SiNodeDotJs"
-import { SiMongodb } from "@react-icons/all-files/si/SiMongodb"
-import { SiPhp } from "@react-icons/all-files/si/SiPhp"
-import { SiGithub } from "@react-icons/all-files/si/SiGithub"
-import { SiFigma } from "@react-icons/all-files/si/SiFigma"
-import { SiHeroku } from "@react-icons/all-files/si/SiHeroku"
+import {
+  frontendComponents,
+  othersComponents,
+  backendComponents,
+} from "../content/skills/skills"
+import {
+  Card,
+  CardInner,
+  FrontCard,
+  BackCard,
+} from "../components/molecules/FlipCard"
 
-const StyledProfileCard = styled.div`
-  width: 300px;
-  height: 400px;
+const StyledAboutContent = styled.div`
+  @media (max-width: 767px) {
+    .description,
+    .profileCard {
+      flex: 0 0 100%;
+    }
 
-  perspective: 1000px;
-  margin: auto;
-  cursor: pointer;
-`
+    .description {
+      order: 1;
+    }
 
-const StyledFrontCard = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-`
-
-const StyledBackCard = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  border-radius: 10px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  background-color: var(--primary-blue);
-
-  ul {
-    position: relative;
-    color: white;
-    margin-bottom: 0;
-  }
-
-  .list-icon {
-    position: absolute;
-    margin-left: -1.5rem;
-    color: white;
-    left: 0;
-  }
-`
-
-const StyledInnerCard = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all 0.6s;
-  &:hover {
-    transform: rotateY(180deg);
+    .profileCard {
+      margin-bottom: 2.5rem;
+    }
   }
 `
 
@@ -87,146 +49,6 @@ const StyledTabItem = styled.div`
   cursor: pointer;
   transition: all 250ms;
 `
-
-const othersdComponents = [
-  {
-    name: "Github/Version Control",
-    component: (
-      <SiGithub
-        data-tip
-        data-for="others-0"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "Figma",
-    component: (
-      <SiFigma
-        data-tip
-        data-for="others-1"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "Heroku/Deployment",
-    component: (
-      <SiHeroku
-        data-tip
-        data-for="others-2"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-]
-
-const backendComponents = [
-  {
-    name: "Node/Express",
-    component: (
-      <SiNodeDotJs
-        data-tip
-        data-for="backend-0"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "MongoDB/Mongoose",
-    component: (
-      <SiMongodb
-        data-tip
-        data-for="backend-1"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "PHP",
-    component: (
-      <SiPhp
-        data-tip
-        data-for="backend-2"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-]
-
-const frontendComponents = [
-  {
-    name: "React/React Native",
-    component: (
-      <SiReact
-        data-tip
-        data-for="frontend-0"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-
-  {
-    name: "Redux",
-    component: (
-      <SiRedux
-        data-tip
-        data-for="frontend-1"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "HTML",
-    component: (
-      <SiHtml5
-        data-tip
-        data-for="frontend-2"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "CSS",
-    component: (
-      <SiCss3
-        data-tip
-        data-for="frontend-3"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "Javascript",
-    component: (
-      <SiJavascript
-        data-tip
-        data-for="frontend-4"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "jQuery",
-    component: (
-      <SiJquery
-        data-tip
-        data-for="frontend-5"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-  {
-    name: "Bootstrap",
-    component: (
-      <SiBootstrap
-        data-tip
-        data-for="frontend-6"
-        className="text-6xl text-white mr-3"
-      />
-    ),
-  },
-]
 
 const About = props => {
   const data = useStaticQuery(graphql`
@@ -269,7 +91,7 @@ const About = props => {
     <div ref={revealContainer} id="about">
       <Section className="container">
         <SectionHeader title="About Me" />
-        <div className="sectionContent flex mt-10">
+        <StyledAboutContent className="sectionContent flex flex-wrap  mt-10">
           <div className="description flex-1">
             <p className="text-white">
               Hello world! My name is Andi, a Software Engineer based in
@@ -291,16 +113,16 @@ const About = props => {
               newWindow={true}
             />
           </div>
-          <div className="flex-1">
-            <StyledProfileCard>
-              <StyledInnerCard className="shadow-xl">
-                <StyledFrontCard>
+          <div className="profileCard flex-1 px-5">
+            <Card>
+              <CardInner className="shadow-xl">
+                <FrontCard>
                   <Img
                     fluid={data.placeholderImage.childImageSharp.fluid}
                     style={{ maxHeight: "400px", borderRadius: "10px" }}
                   />
-                </StyledFrontCard>
-                <StyledBackCard>
+                </FrontCard>
+                <BackCard>
                   <p className="text-center text-secondary font-semibold">
                     Andi Usman Balo
                   </p>
@@ -322,11 +144,11 @@ const About = props => {
                       Cat Lover, Startup Enthusiast, INFJ-A, Dislikes Coffee
                     </li>
                   </ul>
-                </StyledBackCard>
-              </StyledInnerCard>
-            </StyledProfileCard>
+                </BackCard>
+              </CardInner>
+            </Card>
           </div>
-        </div>
+        </StyledAboutContent>
         <div className="skillsContainer mt-10">
           <div className="skillsTab flex justify-center">
             <StyledTabItem
@@ -364,7 +186,7 @@ const About = props => {
               className="frontendStack"
               style={{ display: isFrontend ? "block" : "none" }}
             >
-              <div className=" flex items-center justify-center ">
+              <div className=" flex flex-wrap items-center justify-center ">
                 {frontendComponents &&
                   frontendComponents.map((frontend, i) => (
                     <>
@@ -410,9 +232,9 @@ const About = props => {
 
           <CSSTransition in={isOthers} timeout={250} classNames="fade">
             <div style={{ display: isOthers ? "block" : "none" }}>
-              <div className="flex items-center justify-center ">
-                {othersdComponents &&
-                  othersdComponents.map((others, i) => (
+              <div className="flex  items-center justify-center ">
+                {othersComponents &&
+                  othersComponents.map((others, i) => (
                     <>
                       <ReactTooltip
                         id={`others-${i}`}
