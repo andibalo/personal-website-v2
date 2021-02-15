@@ -1,6 +1,5 @@
 {
   "name": "personal-website-v2",
-  "private": true,
   "description": "Pesonal Website v2",
   "version": "1.0.0",
   "author": "Andi Usman Balo <andibalo213@gmail.com>",
@@ -8,7 +7,6 @@
     "type": "git",
     "url": "https://github.com/andibalo/personal-website-v2"
   },
-
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "^10.2.3",
@@ -22,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.4.0",
     "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^2.8.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-styled-components": "^3.9.0",
     "gatsby-remark-images": "^3.11.0",
     "gatsby-source-filesystem": "^2.5.0",
@@ -32,7 +31,6 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-scroll": "^1.8.1",
     "react-tooltip": "^4.2.13",
     "react-transition-group": "^4.4.1",
     "scrollreveal": "^4.0.7",

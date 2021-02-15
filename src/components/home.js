@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "gatsby"
 import styled from "styled-components"
 
 const StyledHomeContainer = styled.div`
@@ -53,7 +53,7 @@ const Home = props => {
   const items = [one, two, three, four]
 
   return (
-    <StyledHomeContainer className="container">
+    <StyledHomeContainer className="container" id="home">
       <div className="min-h-screen flex items-center">
         <div>
           <TransitionGroup component={null}>

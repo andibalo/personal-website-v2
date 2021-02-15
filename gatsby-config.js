@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: "https://andiusmanbalo.com",
   },
   plugins: [
+    `gatsby-plugin-smoothscroll`,
     "gatsby-plugin-scroll-reveal",
     {
       resolve: `gatsby-plugin-google-fonts`,

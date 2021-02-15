@@ -4,7 +4,9 @@ import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "gatsby"
+import { navLinks } from "../../utils/navLinks"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const StyledMobileSidebar = styled.div`
   position: fixed;
@@ -41,46 +43,17 @@ const MobileSidebar = ({ showSidebar, handleShowSidebar }) => {
       >
         <div className="flex  flex-col">
           <ul className="m-0 text-center">
-            <li className=" mb-8">
-              <Link
-                className="p-3 text-xl text-white"
-                to="about"
-                smooth={true}
-                duration={1000}
-              >
-                About
-              </Link>
-            </li>
-            <li className=" mb-8">
-              <Link
-                className="p-3 text-xl text-white"
-                to="experience"
-                smooth={true}
-                duration={1500}
-              >
-                Experience
-              </Link>
-            </li>
-            <li className="mb-8">
-              <Link
-                className="p-3 text-xl text-white"
-                to="project"
-                smooth={true}
-                duration={2000}
-              >
-                Projects
-              </Link>
-            </li>
-            <li className="mb-8">
-              <Link
-                className="p-3 text-xl text-white"
-                to="contact"
-                smooth={true}
-                duration={2000}
-              >
-                Contact
-              </Link>
-            </li>
+            {navLinks &&
+              navLinks.map(navlink => (
+                <li className=" mb-8">
+                  <button
+                    className="p-3 text-xl text-white"
+                    onClick={() => scrollTo(navlink.href)}
+                  >
+                    {navlink.name}
+                  </button>
+                </li>
+              ))}
           </ul>
           <div className="flex justify-center">
             <Button title="Resume" dark={true} />

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "gatsby"
 import MobileSidebar from "./molecules/MobileSidebar"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-
+import scrollTo from "gatsby-plugin-smoothscroll"
+import { navLinks } from "../utils/navLinks"
 const StyledNavbar = styled.div`
   .gatsby-image-wrapper {
     width: 140px;
@@ -72,46 +73,18 @@ const Navbar = () => {
           </span>
         </button>
         <ul className=" text-white m-0 items-center hidden md:flex">
-          <li className=" mx-2">
-            <Link
-              className="p-3 cursor-pointer hover:text-primary transition duration-300"
-              to="about"
-              smooth={true}
-              duration={1000}
-            >
-              About
-            </Link>
-          </li>
-          <li className=" mx-2">
-            <Link
-              className="p-3 cursor-pointer hover:text-primary transition duration-300"
-              to="experience"
-              smooth={true}
-              duration={1500}
-            >
-              Experience
-            </Link>
-          </li>
-          <li className="mx-2">
-            <Link
-              className="p-3 cursor-pointer hover:text-primary transition duration-300"
-              to="project"
-              smooth={true}
-              duration={2000}
-            >
-              Projects
-            </Link>
-          </li>
-          <li className="mx-2">
-            <Link
-              className="p-3 cursor-pointer hover:text-primary transition duration-300 ease"
-              to="contact"
-              smooth={true}
-              duration={2000}
-            >
-              Contact
-            </Link>
-          </li>
+          {navLinks &&
+            navLinks.map(navlink => (
+              <li className="mx-2">
+                <button
+                  className="p-3 cursor-pointer hover:text-primary transition duration-300"
+                  onClick={() => scrollTo(navlink.href)}
+                >
+                  {navlink.name}
+                </button>
+              </li>
+            ))}
+
           <li className="p-3 mx-2 mr-0 pr-0">
             <Button
               title="Resume"

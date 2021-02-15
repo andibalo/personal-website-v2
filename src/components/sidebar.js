@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { scrollToTop } from "../utils/functions"
+import scrollTo from "gatsby-plugin-smoothscroll"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
@@ -53,7 +53,10 @@ const Sidebar = () => {
         {!data?.placeholderImage?.childImageSharp?.fluid ? (
           <div>Picture not found</div>
         ) : (
-          <div onClick={scrollToTop} className="cursor-pointer sidebarLogo">
+          <div
+            onClick={() => scrollTo("#home")}
+            className="cursor-pointer sidebarLogo"
+          >
             <Img fluid={data.placeholderImage.childImageSharp.fluid} />
           </div>
         )}
