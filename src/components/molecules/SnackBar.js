@@ -25,7 +25,7 @@ const StyledSnackBar = styled.div`
     justify-content: center;
   }
 `
-export const defaultDuration = 1000000
+export const defaultDuration = 5000
 export const defaultInterval = 250
 export const defaultType = "success"
 export const SnackbarContext = createContext(null)

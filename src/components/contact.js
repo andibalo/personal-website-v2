@@ -112,10 +112,6 @@ const Contact = props => {
 
     setIsSending(true)
 
-    // setTimeout(() => {
-    //   setIsSending(false)
-    // }, 2000)
-
     const form = e.target
     fetch("/", {
       method: "POST",
@@ -125,8 +121,14 @@ const Contact = props => {
         ...formData,
       }),
     })
-      .then(() => openSnackbar("Message sent successfully"))
-      .catch(error => openSnackbar("Failed to send message", "danger"))
+      .then(() => {
+        setIsSending(false)
+        openSnackbar("Message sent successfully")
+      })
+      .catch(error => {
+        setIsSending(false)
+        openSnackbar("Failed to send message", "danger")
+      })
   }
 
   return (
