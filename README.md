@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.andiusmanbalo.com">
-    <img alt="Gatsby" src="./src/images/balo-logo.png" width="60" />
+    <img alt="Gatsby" src="./src/images/balo-logo.png" width="120" />
   </a>
 </p>
 <h1 align="center">
