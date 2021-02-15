@@ -14,6 +14,26 @@
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+/* CSSTransition classNames logic */
+
+.snackbar-enter,
+.snackbar-exit-active {
+  opacity: 0;
+}
+
+.snackbar-enter-active {
+  opacity: 1;
+}
+
+.snackbar-enter-bottom-center,
+.snackbar-exit-active-bottom-center {
+  transform: translateY(16px);
+}
+
+.snackbar-enter-active-bottom-center {
+  transform: translateY(0px);
+}
+
 /* Fade up */
 .fadeup-enter {
   opacity: 0.01;

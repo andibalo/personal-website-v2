@@ -18,6 +18,7 @@ import Experience from "./experience"
 import Project from "./project"
 import Contact from "./contact"
 import Footer from "./footer"
+import SnackBar from "../components/molecules/SnackBar"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,17 +33,19 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="min-h-screen bg-secondary">
-        {children}
-        <Sidebar />
-        <Navbar />
-        <Home />
-        <About />
-        <Experience />
-        <Project />
-        <Contact />
-        <Footer />
-      </div>
+      <SnackBar>
+        <div className="min-h-screen bg-secondary">
+          {children}
+          <Sidebar />
+          <Navbar />
+          <Home />
+          <About />
+          <Experience />
+          <Project />
+          <Contact />
+          <Footer />
+        </div>
+      </SnackBar>
     </>
   )
 }

@@ -15,6 +15,7 @@ import {
   BackCard,
 } from "../components/molecules/FlipCard"
 import { FaArrowLeft } from "@react-icons/all-files/fa/FaArrowLeft"
+import useSnackbar from "../hooks/useSnackbar"
 
 const StyledContactCard = styled.div`
   min-height: 500px;
@@ -83,15 +84,49 @@ const Contact = props => {
 
   const [isSending, setIsSending] = useState(false)
   const [isFlipped, setIsFlipped] = useState(false)
+  const [openSnackbar, closeSnackbar] = useSnackbar()
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
+
+  const { name, email, phone, message } = formData
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleFormChange = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   const handleSubmitForm = e => {
     e.preventDefault()
 
     setIsSending(true)
 
-    setTimeout(() => {
-      setIsSending(false)
-    }, 2000)
+    // setTimeout(() => {
+    //   setIsSending(false)
+    // }, 2000)
+
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...formData,
+      }),
+    })
+      .then(() => openSnackbar("Message sent successfully"))
+      .catch(error => openSnackbar("Failed to send message", "danger"))
   }
 
   return (
@@ -101,6 +136,7 @@ const Contact = props => {
         <div className="mt-10">
           <StyledContactCard className="hidden md:flex shadow-xl  ">
             <div className=" contactInfo p-10 rounded-l-lg flex items-center">
+              <button onClick={() => openSnackbar("test")}>test</button>
               <div>
                 <ul className="relative mb-0 max-w-xs">
                   <li className="mb-7">
@@ -163,29 +199,48 @@ const Contact = props => {
                     Open for Business Inquiries
                   </p>
                 </div>
-                <form className="mb-0 " onSubmit={handleSubmitForm}>
+                <form
+                  name="contact"
+                  method="post"
+                  className="mb-0 "
+                  onSubmit={handleSubmitForm}
+                  data-netlify="true"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
                   <input
                     className="block w-full p-2 mb-3"
                     type="text"
                     placeholder="Full Name"
+                    name="name"
+                    value={name}
+                    onChange={e => handleFormChange(e)}
                     required
                   />
                   <input
                     className="block w-full p-2 mb-3"
                     type="email"
                     placeholder="Email"
+                    name="email"
+                    value={email}
+                    onChange={e => handleFormChange(e)}
                     required
                   />
                   <input
                     className="block w-full p-2 mb-3"
                     type="tel"
                     placeholder="Phone Number"
+                    name="phone"
+                    value={phone}
+                    onChange={e => handleFormChange(e)}
                     required
                   />
                   <textarea
                     className="block w-full p-2 mb-3"
                     rows="5"
                     placeholder="Leave your message here..."
+                    name="message"
+                    value={message}
+                    onChange={e => handleFormChange(e)}
                     required
                   ></textarea>
 
@@ -229,29 +284,48 @@ const Contact = props => {
                       Open for Business Inquiries
                     </p>
                   </div>
-                  <form className="mb-0 " onSubmit={handleSubmitForm}>
+                  <form
+                    name="contact"
+                    method="post"
+                    className="mb-0 "
+                    onSubmit={handleSubmitForm}
+                    data-netlify="true"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
                     <input
                       className="block w-full p-2 mb-3"
                       type="text"
                       placeholder="Full Name"
+                      name="name"
+                      value={name}
+                      onChange={e => handleFormChange(e)}
                       required
                     />
                     <input
                       className="block w-full p-2 mb-3"
                       type="email"
                       placeholder="Email"
+                      name="email"
+                      value={email}
+                      onChange={e => handleFormChange(e)}
                       required
                     />
                     <input
                       className="block w-full p-2 mb-3"
                       type="tel"
                       placeholder="Phone Number"
+                      name="phone"
+                      value={phone}
+                      onChange={e => handleFormChange(e)}
                       required
                     />
                     <textarea
                       className="block w-full p-2 mb-3"
                       rows="5"
                       placeholder="Leave your message here..."
+                      name="message"
+                      value={message}
+                      onChange={e => handleFormChange(e)}
                       required
                     ></textarea>
 
