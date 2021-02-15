@@ -138,7 +138,6 @@ const Contact = props => {
         <div className="mt-10">
           <StyledContactCard className="hidden md:flex shadow-xl  ">
             <div className=" contactInfo p-10 rounded-l-lg flex items-center">
-              <button onClick={() => openSnackbar("test")}>test</button>
               <div>
                 <ul className="relative mb-0 max-w-xs">
                   <li className="mb-7">
