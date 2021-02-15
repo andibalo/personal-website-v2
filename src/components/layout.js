@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Sidebar from "./sidebar"
@@ -30,15 +30,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const isHome = location.pathname === "/"
-  const [isLoading, setIsLoading] = useState(isHome)
-
-  useEffect(() => {
-    if (isLoading) {
-      return
-    }
-    setIsLoading(false)
-  }, [isLoading])
   return (
     <>
       <div className="min-h-screen bg-secondary">

@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from "react"
 import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
 import styled from "styled-components"
-import sr from "../utils/scroll-reveal/sr"
-import srConfig from "../utils/scroll-reveal/sr-config"
+// import sr from "../utils/scroll-reveal/sr"
+// import srConfig from "../utils/scroll-reveal/sr-config"
 import ExperienceData from "../content/experience.json"
 import { CSSTransition } from "react-transition-group"
 import { MdKeyboardArrowRight } from "@react-icons/all-files/md/MdKeyboardArrowRight"
@@ -81,7 +81,7 @@ const StyledTabContent = styled.div`
 `
 
 const Experience = () => {
-  useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
+  // useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
 
   const [activeTabId, setActiveTabId] = useState(0)
 

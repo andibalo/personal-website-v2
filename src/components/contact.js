@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from "react"
 import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
 import styled from "styled-components"
-import sr from "../utils/scroll-reveal/sr"
-import srConfig from "../utils/scroll-reveal/sr-config"
+// import sr from "../utils/scroll-reveal/sr"
+// import srConfig from "../utils/scroll-reveal/sr-config"
 import { GoTriangleLeft } from "@react-icons/all-files/go/GoTriangleLeft"
 import { FaMapMarkerAlt } from "@react-icons/all-files/fa/FaMapMarkerAlt"
 import { FaPhone } from "@react-icons/all-files/fa/FaPhone"
@@ -77,7 +77,7 @@ const StyledContactCardMobile = styled.div`
 `
 
 const Contact = props => {
-  useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
+  // useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
 
   const revealContainer = useRef(null)
 

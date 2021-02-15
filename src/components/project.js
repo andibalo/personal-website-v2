@@ -4,8 +4,8 @@ import Img from "gatsby-image"
 import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
 import styled from "styled-components"
-import sr from "../utils/scroll-reveal/sr"
-import srConfig from "../utils/scroll-reveal/sr-config"
+// import sr from "../utils/scroll-reveal/sr"
+// import srConfig from "../utils/scroll-reveal/sr-config"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaExternalLinkAlt } from "@react-icons/all-files/fa/FaExternalLinkAlt"
 import otherProjects from "../content/otherProjects.json"
@@ -140,17 +140,17 @@ const Project = props => {
   const revealOtherHeader = useRef(null)
   const revealOtherProjects = useRef([])
 
-  useEffect(() => {
-    sr.reveal(revealHeader.current, srConfig())
-    sr.reveal(revealOtherHeader.current, srConfig())
+  // useEffect(() => {
+  //   sr.reveal(revealHeader.current, srConfig())
+  //   sr.reveal(revealOtherHeader.current, srConfig())
 
-    revealFeatured.current.forEach((ref, i) =>
-      sr.reveal(ref, srConfig(i * 100))
-    )
-    revealOtherProjects.current.forEach((ref, i) =>
-      sr.reveal(ref, srConfig(i * 75))
-    )
-  }, [])
+  //   revealFeatured.current.forEach((ref, i) =>
+  //     sr.reveal(ref, srConfig(i * 100))
+  //   )
+  //   revealOtherProjects.current.forEach((ref, i) =>
+  //     sr.reveal(ref, srConfig(i * 75))
+  //   )
+  // }, [])
 
   let isAlternate = true
 
