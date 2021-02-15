@@ -1,16 +1,16 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="https://www.andiusmanbalo.com">
+    <img alt="Gatsby" src="./src/images/balo-logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  andiusmanbalo.com
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+<p align="center">Second iteration website of Andi Usman Balo. Built with <a href="https://www.gatsbyjs.com">Gatsby</a> and hosted on <a href="https://www.netlify.com/">Netlify<a/>.</p>
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+<p align="center">Previous iterations: <a href="https://github.com/andibalo/andibalo.github.io">v1</a> </p>
 
 ## 🚀 Quick start
 
