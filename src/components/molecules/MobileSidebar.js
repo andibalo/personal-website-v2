@@ -4,9 +4,8 @@ import styled from "styled-components"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaLinkedin } from "@react-icons/all-files/fa/FaLinkedin"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
-import { Link } from "gatsby"
+import { Link, animateScroll as scroll } from "react-scroll"
 import { navLinks } from "../../utils/navLinks"
-import scrollTo from "gatsby-plugin-smoothscroll"
 
 const StyledMobileSidebar = styled.div`
   position: fixed;
@@ -46,12 +45,13 @@ const MobileSidebar = ({ showSidebar, handleShowSidebar }) => {
             {navLinks &&
               navLinks.map(navlink => (
                 <li className=" mb-8">
-                  <button
+                  <Link
                     className="p-3 text-xl text-white"
-                    onClick={() => scrollTo(navlink.href)}
+                    to={navlink.href}
+                    duration={navlink.duration}
                   >
                     {navlink.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
           </ul>

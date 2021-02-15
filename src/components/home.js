@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
-import { Link } from "gatsby"
-import styled from "styled-components"
 
+import styled from "styled-components"
+import { Link, animateScroll as scroll } from "react-scroll"
 const StyledHomeContainer = styled.div`
   margin: auto;
 

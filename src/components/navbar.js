@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import Button from "./atoms/Button"
-import { Link } from "gatsby"
+import { Link, animateScroll as scroll } from "react-scroll"
 import MobileSidebar from "./molecules/MobileSidebar"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import scrollTo from "gatsby-plugin-smoothscroll"
 import { navLinks } from "../utils/navLinks"
+
 const StyledNavbar = styled.div`
   .gatsby-image-wrapper {
     width: 140px;
@@ -76,12 +76,14 @@ const Navbar = () => {
           {navLinks &&
             navLinks.map(navlink => (
               <li className="mx-2">
-                <button
+                <Link
                   className="p-3 cursor-pointer hover:text-primary transition duration-300"
-                  onClick={() => scrollTo(navlink.href)}
+                  to={navlink.href}
+                  smooth={true}
+                  duration={navlink.duration}
                 >
                   {navlink.name}
-                </button>
+                </Link>
               </li>
             ))}
 
