@@ -33,6 +33,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className="min-h-screen bg-secondary">
+        {children}
         <Sidebar />
         <Navbar />
         <Home />

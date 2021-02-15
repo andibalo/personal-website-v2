@@ -6,8 +6,8 @@ import Img from "gatsby-image"
 import Button from "./atoms/Button"
 import Section from "./atoms/Section"
 import SectionHeader from "./atoms/SectionHeader"
-// import sr from "../utils/scroll-reveal/sr"
-// import srConfig from "../utils/scroll-reveal/sr-config"
+import sr from "../utils/scroll-reveal/sr"
+import srConfig from "../utils/scroll-reveal/sr-config"
 import ReactTooltip from "react-tooltip"
 import { FaBirthdayCake } from "@react-icons/all-files/fa/FaBirthdayCake"
 import { FaInfoCircle } from "@react-icons/all-files/fa/FaInfoCircle"
@@ -80,7 +80,7 @@ const About = props => {
   `)
 
   const revealContainer = useRef(null)
-  // useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
+  useEffect(() => sr.reveal(revealContainer.current, srConfig()), [])
 
   const [isFrontend, setIsFrontend] = useState(true)
   const [isBackend, setIsBackend] = useState(false)

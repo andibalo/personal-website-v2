@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Andi Usman Balo - Full Stack Developer`,
     description: `Andi Usman Balo is a software engineer with strong knowledge in frontend, backend development and building user-oriented user interface who specializes in building websites, applications and everything in between.`,
-    author: `@andibalo`,
+    author: `@andiusmanbalo`,
     siteUrl: "https://andiusmanbalo.com",
   },
   plugins: [
