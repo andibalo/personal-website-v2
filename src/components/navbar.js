@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Button from "./atoms/Button"
 import { Link, animateScroll as scroll } from "react-scroll"
 import MobileSidebar from "./molecules/MobileSidebar"
@@ -34,13 +34,6 @@ const Navbar = () => {
 
   const [showSidebar, setShowSidebar] = useState(false)
 
-  const [isScrolled, setIsScrolled] = useState(false)
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setIsScrolled(window.scrollY > 50)
-    })
-  }, [])
-
   const handleShowSidebar = () => {
     setShowSidebar(!showSidebar)
   }
@@ -52,10 +45,7 @@ const Navbar = () => {
         handleShowSidebar={handleShowSidebar}
       />
       <StyledNavbar
-        isScrolled={isScrolled}
-        className={`${
-          isScrolled && "bg-secondary-light shadow-xl"
-        } flex justify-between  lg:justify-end pt-3 absolute inset-x-0  px-8 lg:px-20 xl:px-10r`}
+        className={`flex justify-between  lg:justify-end pt-3 absolute inset-x-0  px-8 lg:px-20 xl:px-10r`}
       >
         <Img
           className="lg:hidden"

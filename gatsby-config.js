@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Andi Usman Balo - Full Stack Developer`,
+    title: `Andi Usman Balo | Full Stack Developer`,
     description: `Andi Usman Balo is a software engineer with strong knowledge in frontend, backend development and UI/UX fundamentals who specializes in building websites, applications and everything in between.`,
     author: `@andiusmanbalo`,
     siteUrl: "https://andiusmanbalo.com",
-    image: '/og.png'
+    image: "/og.png",
   },
   plugins: [
     `gatsby-plugin-smoothscroll`,

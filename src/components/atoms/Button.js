@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-
+import { Link } from "gatsby"
 const StyledButtonWrapper = styled.div`
   a,
   button {
@@ -28,10 +28,19 @@ const StyledButtonWrapper = styled.div`
   }
 `
 
-const Button = ({ title, href = null, newWindow, role, download, dark }) => {
+const Button = ({
+  title,
+  href = null,
+  newWindow,
+  role,
+  download,
+  dark,
+  gatsbyLink,
+  className,
+}) => {
   if (role === "button") {
     return (
-      <StyledButtonWrapper>
+      <StyledButtonWrapper className={className}>
         <button>{title}</button>
       </StyledButtonWrapper>
     )
@@ -39,7 +48,7 @@ const Button = ({ title, href = null, newWindow, role, download, dark }) => {
 
   if (download) {
     return (
-      <StyledButtonWrapper>
+      <StyledButtonWrapper className={className}>
         <a href={href || "#"} download>
           {title}
         </a>
@@ -48,10 +57,14 @@ const Button = ({ title, href = null, newWindow, role, download, dark }) => {
   }
 
   return (
-    <StyledButtonWrapper dark={dark}>
-      <a href={href || "#"} target={newWindow ? "_blank" : "_self"}>
-        {title}
-      </a>
+    <StyledButtonWrapper dark={dark} className={className}>
+      {gatsbyLink ? (
+        <Link to={href}>{title}</Link>
+      ) : (
+        <a href={href || "#"} target={newWindow ? "_blank" : "_self"}>
+          {title}
+        </a>
+      )}
     </StyledButtonWrapper>
   )
 }
