@@ -40,7 +40,7 @@ const Button = ({
 }) => {
   if (role === "button") {
     return (
-      <StyledButtonWrapper className={className}>
+      <StyledButtonWrapper dark={dark} className={className}>
         <button>{title}</button>
       </StyledButtonWrapper>
     )
@@ -48,7 +48,7 @@ const Button = ({
 
   if (download) {
     return (
-      <StyledButtonWrapper className={className}>
+      <StyledButtonWrapper dark={dark} className={className}>
         <a href={href || "#"} download>
           {title}
         </a>

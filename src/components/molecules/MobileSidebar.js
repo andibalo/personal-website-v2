@@ -57,7 +57,12 @@ const MobileSidebar = ({ showSidebar, handleShowSidebar }) => {
               ))}
           </ul>
           <div className="flex justify-center">
-            <Button title="Resume" dark={true} />
+            <Button
+              title="Resume"
+              dark={true}
+              href="/Andi_Usman_Balo_CV.pdf"
+              download
+            />
           </div>
           <div className="flex justify-center mt-8">
             <a

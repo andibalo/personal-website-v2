@@ -78,11 +78,7 @@ const Navbar = () => {
             ))}
 
           <li className="p-3 mx-2 mr-0 pr-0">
-            <Button
-              title="Resume"
-              href="../static/Andi_Usman_Balo_CV.pdf"
-              download
-            />
+            <Button title="Resume" href="/Andi_Usman_Balo_CV.pdf" download />
           </li>
         </ul>
       </StyledNavbar>
