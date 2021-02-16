@@ -66,6 +66,12 @@ const StyledTabItem = styled.div`
   }
 `
 
+const StyledSkillsContainer = styled.div`
+  .__react_component_tooltip.show {
+    opacity: 1 !important;
+  }
+`
+
 const About = props => {
   const data = useStaticQuery(graphql`
     query {
@@ -135,7 +141,7 @@ const About = props => {
                 <FrontCard>
                   <Img
                     fluid={data.placeholderImage.childImageSharp.fluid}
-                    style={{ maxHeight: "400px", borderRadius: "10px" }}
+                    style={{ maxHeight: "100%", borderRadius: "10px" }}
                   />
                 </FrontCard>
                 <BackCard className="p-8 bg-primary">
@@ -197,7 +203,7 @@ const About = props => {
           </div>
         </div>
 
-        <div className="mt-5">
+        <StyledSkillsContainer className="mt-5">
           <CSSTransition in={isFrontend} timeout={250} classNames="fade">
             <div
               className="frontendStack"
@@ -211,9 +217,10 @@ const About = props => {
                         id={`frontend-${i}`}
                         place="top"
                         effect="solid"
-                        backgroundColor="var(--grey)"
-                        borderColor="var(--grey)"
-                        className="shadow-xl"
+                        textColor="var(--primary-blue)"
+                        backgroundColor="var(--black-lighter)"
+                        borderColor="var(--black-lighter)"
+                        className="shadow-xl font-semibold "
                       >
                         {frontend.name}
                       </ReactTooltip>
@@ -234,9 +241,10 @@ const About = props => {
                         id={`backend-${i}`}
                         place="top"
                         effect="solid"
-                        backgroundColor="var(--grey)"
-                        borderColor="var(--grey)"
-                        className="shadow-xl"
+                        textColor="var(--primary-blue)"
+                        backgroundColor="var(--black-lighter)"
+                        borderColor="var(--black-lighter)"
+                        className="shadow-xl  font-semibold"
                       >
                         {backend.name}
                       </ReactTooltip>
@@ -257,9 +265,10 @@ const About = props => {
                         id={`others-${i}`}
                         place="top"
                         effect="solid"
-                        backgroundColor="var(--grey)"
-                        borderColor="var(--grey)"
-                        className="shadow-xl"
+                        textColor="var(--primary-blue)"
+                        backgroundColor="var(--black-lighter)"
+                        borderColor="var(--black-lighter)"
+                        className="shadow-xl font-semibold "
                       >
                         {others.name}
                       </ReactTooltip>
@@ -269,7 +278,7 @@ const About = props => {
               </div>
             </div>
           </CSSTransition>
-        </div>
+        </StyledSkillsContainer>
       </Section>
     </div>
   )

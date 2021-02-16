@@ -171,6 +171,11 @@ button,
 input {
   overflow: visible;
 }
+
+button:focus {
+  outline: none !important;
+}
+
 button,
 select {
   text-transform: none;

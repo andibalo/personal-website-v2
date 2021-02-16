@@ -49,6 +49,7 @@ const MobileSidebar = ({ showSidebar, handleShowSidebar }) => {
                     className="p-3 text-xl text-white"
                     to={navlink.href}
                     duration={navlink.duration}
+                    smooth={true}
                   >
                     {navlink.name}
                   </Link>
