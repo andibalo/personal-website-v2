@@ -141,6 +141,7 @@ const About = props => {
                 <FrontCard>
                   <Img
                     fluid={data.placeholderImage.childImageSharp.fluid}
+                    alt="Andi Usman Balo Picture"
                     style={{ maxHeight: "100%", borderRadius: "10px" }}
                   />
                 </FrontCard>

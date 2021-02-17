@@ -50,6 +50,7 @@ const Navbar = () => {
         <Img
           className="lg:hidden"
           fluid={data.placeholderImage.childImageSharp.fluid}
+          alt="Andi Usman Balo Logo"
         />
         <button
           class={`hamburger hamburger--spin md:hidden ${

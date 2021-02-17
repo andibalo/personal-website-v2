@@ -58,7 +58,12 @@ const NotFoundPage = () => {
               </div>
             </StyledGlitchWrapper>
 
-            <Button title="Go Back Home" href="/" className="mt-12" />
+            <Button
+              title="Go Back Home"
+              href="/"
+              className="mt-12"
+              gatsbyLink
+            />
           </div>
         </CSSTransition>
       </div>

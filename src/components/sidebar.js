@@ -54,7 +54,10 @@ const Sidebar = () => {
           <div>Picture not found</div>
         ) : (
           <div onClick={scrollToTop} className="cursor-pointer sidebarLogo">
-            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+            <Img
+              fluid={data.placeholderImage.childImageSharp.fluid}
+              alt="Andi Usman Balo Logo"
+            />
           </div>
         )}
       </div>
