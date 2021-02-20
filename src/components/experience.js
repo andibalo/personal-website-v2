@@ -78,6 +78,12 @@ const StyledTabContent = styled.div`
 
     color: var(--primary-blue);
   }
+
+  @media (max-width: 767px) {
+    .companyName {
+      display: block;
+    }
+  }
 `
 
 const Experience = () => {

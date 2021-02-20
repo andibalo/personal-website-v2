@@ -1,12 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Andi Usman Balo - Full Stack Developer`,
-    description: `Andi Usman Balo is a software engineer with strong knowledge in frontend, backend development and building user-oriented user interface who specializes in building websites, applications and everything in between.`,
-    author: `@andibalo`,
+    title: `Andi Usman Balo | Full Stack Developer`,
+    description: `Andi Usman Balo is a software engineer with strong knowledge in frontend, backend development and UI/UX fundamentals who specializes in building websites, applications and everything in between.`,
+    author: `@andiusmanbalo`,
     siteUrl: "https://andiusmanbalo.com",
+    image: "/og.png",
   },
   plugins: [
-    "gatsby-plugin-scroll-reveal",
+    `gatsby-plugin-smoothscroll`,
+    `gatsby-plugin-sitemap`,
+    "gatsby-plugin-robots-txt",
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -58,6 +61,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/balo-logo.png`, // This path is relative to the root of the site.
+      },
+    },
+    // All other plugins
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["UA-189911870-1"],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

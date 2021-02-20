@@ -134,8 +134,6 @@ const Project = props => {
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node)
 
-  console.log(featuredProjects)
-
   const revealHeader = useRef(null)
   const revealFeatured = useRef([])
 
